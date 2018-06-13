@@ -48,9 +48,12 @@ class PostController extends Controller
 	 */
 	public function actionView($id)
 	{
-            $post = $this->loadModel();          
+            //$url = Post::model()->getUrlforComment();
+            $url = Post::model()->getUrl();
+            $post = $this->loadModel();   
 		$this->render('view',array(
 			'model'=>$post,
+                        'url'=>$url,
 		));
 	}
 

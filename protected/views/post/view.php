@@ -34,13 +34,13 @@ $this->menu=array(
 )); ?>
 
 <div id="comments">
-    <?php var_dump($model);?>
+    
     <?php if($model->commentCount>=1):?>
-        <h3><?php echo $model->commentCount.'comments'; ?></h3>
-        
+        <h3><?php echo $model->commentCount.' comments'; ?></h3>
         <?php $this->renderPartial('_comments', array(
             'post'=>$model,
             'comments'=>$model->comments,
+            'url'=>$url,
         ));       
         ?>
         <?php endif;?>
